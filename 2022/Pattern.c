@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main (){
-    char string [] = "UNIVERSITY";
+    char string [] = "INFINITY";
     int length = strlen (string);
     for (int i = 0; i < length; i++)
     {
