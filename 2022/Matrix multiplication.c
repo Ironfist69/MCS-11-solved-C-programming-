@@ -1,54 +1,53 @@
-//Write a C program to find the product of two matrices
+//Write a C program to perform the following 
+//operation on matrices :
+//D = (A*B) + C
+//where A, B and C are matrices of 3  3 size 
+//and D is the resultant matrix.
+
 #include <stdio.h>
 int main () {
 
-    int a_row, a_col, b_row, b_col;
-    printf("Enter the rows and columns for matrix A: ");        //A row,column
-    scanf("%d %d", &a_row, &a_col);
-
-    printf("Enter the rows and columns for matrix B: ");        //B row,column
-    scanf("%d %d", &b_row, &b_col);
-
-    if (a_col != b_row)
-    {
-        printf("Matrices can't be multiplited !!");
-        system("pause");
-        return 0;
-    }
-
-            int a[a_row][a_col];
-            int b[b_row][b_col];
-                    //ELEMENTS OF A
-    printf("Enter the elements of matrix A \n");
-        for (int i=0; i< a_row; i++) {
-            for (int j=0; j<a_col; j++) {
-                scanf ("%d", &a[i][j]);
-            }
-        }
-                    //ELEMENTS OF B
-    printf("Enter the elements of matrix B \n");
-        for (int i = 0; i < b_row; i++) {
-            for (int j = 0; j < b_col; j++) {
-                scanf("%d", &b[i][j]);
-            }
-        }
-int sum=0;
-int PRODUCT[a_row][b_col];
-for (int i=0; i<a_row; i++) {                   //MAIN PRODUCT !!
-    for (int j=0; j<b_col; j++) {
-        for (int k=0; k<b_row; k++) {
-            sum+=a[i][k]*b[k][j];
-        }
-    PRODUCT[i][j]=sum;
-    sum=0;
+int A[3][3], B[3][3], C[3][3], D[3][3];
+printf("Enter elements of matrix A: \n");
+for(int i=0; i<3; i++) {
+    for(int j=0; j<3; j++) {        
+        scanf("%d", &A[i][j]);       //Taking elements of A
     }
 }
-    printf ("Product of matrix: \n");
-    for(int i=0; i<a_row; i++, printf("\n")) {
-        for(int j=0; j<b_col; j++) {
-            printf("%d", PRODUCT[i][j]);            //Printing this $hit
+
+printf("Enter elements of matrix B: \n");
+for (int i=0; i<3; i++) {
+    for (int j=0; j<3; j++) {
+        scanf("%d", &B[i][j]);       //Taking elements of B
+    }
+}
+
+printf("Enter elements of matrix C: \n");
+for(int i=0; i<3 ; i++) {
+    for(int j=0; j<3; j++) {
+        scanf("%d", &C[i][j]);      //Taking elements of C
+    }
+}
+
+
+for(int i=0; i<3 ; i++) {
+    for(int j=0; j<3; j++) {
+        D[i][j]=0;                                  //MAIN OPERATION
+        for(int k=0; k<3; k++) {
+            D[i][j] += A[i][k]*B[k][j];            // A x B storing it to D
+            D[i][j] += C[i][j];                    // Adding C and storing it to D
         }
     }
-    system("pause");
-    return 0;
+}
+
+            printf ("The D matrix will be \n");
+            for(int i=0; i<3; i++) {
+                for (int j=0; j<3; j++) {
+                    printf ("%d", D[i][j]);
+                }
+                printf("\n");
+            }
+
+            system("pause");
+            return 0;
 }
