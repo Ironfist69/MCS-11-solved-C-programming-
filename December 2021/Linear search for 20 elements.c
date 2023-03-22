@@ -13,7 +13,7 @@ int search_elements;
     scanf("%d", &search_elements);
     int index = -1;                     //initializing from -1
     for (int i=0; i<20; i++) {
-        if (list[i] = search_elements)
+        if (list[i] == search_elements)
         {
             index = i;
             break;
@@ -21,9 +21,9 @@ int search_elements;
     }
     if (index != -1)
     {
-        printf("The element %d is in %dth position ", search_elements);
+        printf("The element %d is in %dth position \n", search_elements);
     } else {
-        printf ("The element %d not found", search_elements);
+        printf ("The element %d not found \n", search_elements);
     }
       system ("pause");
       return 0;
