@@ -13,7 +13,7 @@ int main () {
     while(str1[i] !='\0') {
         i++;
     }
-    while(str2[j] != '\0') {
+    while(str2[j] != '\0') {  //looping upto last string
         str1[i]=str2[j];
         i++;
         j++;
