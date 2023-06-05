@@ -7,20 +7,14 @@ int fibonacci (int n) {
         return fibonacci (n-1) + fibonacci (n-2);
     }
 }
-
-void printFibonacci (int n) {
-    for ( int i=0; i < n; i++) {            //Looping for the n series
-        printf ("%d",fibonacci(i));
-    }
-}
-
 int main () {
-    int n;
+    int n,i;
     printf ("Enter your terms: ");
     scanf ("%d", &n);
     printf ("The fibonacci series for %d terms is: ", n);
-    printFibonacci(n);
-    printf ("\n");
-    system("pause");
+    for(i=0;i<n;i++) {
+        printf("%d",fibonacci(i));
+    }
+    getch();
     return 0;
 }
